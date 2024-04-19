@@ -3,10 +3,10 @@
 
 echo "Enter username :  "
 
-read USERNAME 
+read  -s USERNAME 
 
 echo "Enter password :  "
 
-read PASSWORD 
+read -s PASSWORD 
 
 echo "USERNAME is :$USERNAME ,PASSWORD is :$PASSWORD"
