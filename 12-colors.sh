@@ -2,10 +2,11 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
-echo "please run the scrp its with root access"
+echo "please run the scrpits with root access"
 exit 1
+
 else 
 echo "your are super user"
 
