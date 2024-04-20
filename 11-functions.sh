@@ -20,6 +20,6 @@ echo " your are super user"
 
 fi
 
-dnf install mysqll-server -y
+dnf installlll mysql-server -y
 
-VALIDATE $? " installing mysql "
+VALIDATE $? "installing mysql"
