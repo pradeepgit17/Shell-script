@@ -12,3 +12,12 @@ echo " your are super user"
 fi
 
 dnf install mysql-server -y
+
+if [ $? -ne 0 ]
+then 
+echo " $? installation is fails"
+exit 1
+else
+echo " $? installation is success"
+
+fi 
