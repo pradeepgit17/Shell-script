@@ -2,6 +2,15 @@
 
 USERID=$(id -u)
 
+VALIDATE(){
+    if [$1 -ne 0 ]
+    then echo "$2 installation is fails"
+    exit 1
+    else
+    echo "$2 installation is success"
+    fi
+}
+
 if [ $USERID -ne 0 ]
 then 
 echo " please run the scripts with Roots user"
@@ -11,13 +20,6 @@ echo " your are super user"
 
 fi
 
-dnf installl mysql-server -y
+dnf install mysqll-server -y
 
-if [ $? -ne 0 ]
-then 
-echo " $? installation is fails"
-exit 1
-else
-echo " $? installation is success"
-
-fi 
+VALIDATE $? " installing mysql "
