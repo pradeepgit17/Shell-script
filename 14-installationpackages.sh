@@ -32,7 +32,7 @@ if [ $? -eq 0 ]
 then 
 echo -e "$i already installed...$Y SKIPPING $N"
 else
-done
+
 dnf install $i-y &>>$ 
 fi
 done
