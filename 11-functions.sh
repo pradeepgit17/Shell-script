@@ -1,7 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$($0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 VALIDATE(){
     if [ $1 -ne 0 ]
     then echo "$2 installation is fails"
@@ -20,6 +22,6 @@ echo " your are super user"
 
 fi
 
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$LOGFILE
 
 VALIDATE $? "installing mysql"
