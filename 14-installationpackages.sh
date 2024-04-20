@@ -12,30 +12,31 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-    echo -e "$2 installation is fails"
-    exit 1
+        echo -e "$2 installation is fails"
+        exit 1
     else
-    echo -e  "$2 installation is success"
+         echo -e  "$2 installation is success"
     fi
-      }
-echo "script started execting at : $TIMESTAMP"
+    }
+
 if [ $USERID -ne 0 ]
 then
-echo " please run scripts with root user"
-exit 1
+      echo " please run scripts with root user"
+      exit 1
 else
-echo "your are superuser"
+       echo "your are superuser"
+ fi      
 
 for i in $@
 do 
 echo "packages to install : $i"
 dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
-then 
-echo -e "$i already installed...$Y SKIPPING $N"
-else
-dnf install $i -y  &>>$LOGFILE
-VALIDATE $? "installation of $i"
-fi
+ then 
+    echo -e "$i already installed...$Y SKIPPING $N"
+ else
+     dnf install $i -y  &>>$LOGFILE
+    VALIDATE $? "installation of $i"
+ fi
 done
 
