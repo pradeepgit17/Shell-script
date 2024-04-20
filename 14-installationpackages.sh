@@ -38,4 +38,3 @@ dnf install $i-y  &>>$LOGFILE
 VALIDATE $? "installation of $i"
 fi
 done
-
