@@ -10,7 +10,8 @@ N="\e[0m"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
-    then echo "$2 installation is fails"
+    then 
+    echo "$2 installation is fails"
     exit 1
     else
     echo "$2 installation is success"
