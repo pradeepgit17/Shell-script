@@ -11,7 +11,7 @@ echo " your are super user"
 
 fi
 
-dnf install mysql-server -y
+dnf installl mysql-server -y
 
 if [ $? -ne 0 ]
 then 
