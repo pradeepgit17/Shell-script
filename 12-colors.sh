@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-VALIDATE(
+VALIDATE(){
 if [ $1 -ne 0 ]
 then
 echo "$2 installation is fails"
@@ -10,8 +10,7 @@ exit 1
 else
 echo "$2 installation is pass"
 fi 
-
-)
+}
 if [ $USERID -ne 0 ]
 then
 echo "please run the scrpits with root access"
