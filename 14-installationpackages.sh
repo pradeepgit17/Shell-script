@@ -33,6 +33,8 @@ then
 echo -e "$i already installed...$Y SKIPPING $N"
 else
 
-dnf install $i-y &>>$ 
+dnf install $i-y  &>>$LOGFILE
+VALIDATE $? "installation of $!"
 fi
+
 done
